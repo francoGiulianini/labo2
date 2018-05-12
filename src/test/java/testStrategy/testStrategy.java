@@ -1,18 +1,31 @@
 package testStrategy;
 
-
-
 import org.junit.*;
 
-public class testStrategy {
+import strategy.Contexto;
+import strategy.EstrategiaA;
+import strategy.EstrategiaB;
 
-	Contexto contexto;
+
+public class testStrategy {
+		
 	
-	@before
-	public void init() {
-		this.contexto = new Contexto();
+	@Test
+	public void testEstrategia() {
+		
+		
+		Contexto contexto = new Contexto ();
+		EstrategiaA estrategiaA = new EstrategiaA();
+		EstrategiaB estrategiaB = new EstrategiaB();
+		
+		contexto.setEstrategia(estrategiaA);
+		System.out.println(contexto.ejecutarAlgoritmo());
+		contexto.setEstrategia(estrategiaB);
+		System.out.println(contexto.ejecutarAlgoritmo());	
 	}
 	
-	@test
+	
+		
+	
 	
 }
